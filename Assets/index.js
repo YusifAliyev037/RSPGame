@@ -1,9 +1,17 @@
+const user = document.querySelector("#user");
+const computer = document.querySelector("#computer");
+const score = document.querySelector("#score");
+const final = document.querySelector("#final");
+const final1 = document.querySelector("#final1");
+const score1 = document.querySelector("#score1");
+const userImg = document.querySelector("#userImg");
+const compImg = document.querySelector("#compImg");
+
+
 console.log(window);
 const gameRule = ["r", "s", "p"];
 let playerpoint1 = 0;
 let playerpoint2 = 0;
-
-
 
 
 
@@ -15,26 +23,39 @@ function randomElement(){
 function resultGame(u,c){
     console.log(u);
     console.log(c);
+userImg.src = `./Assets/img/${u}.png`;
+compImg.src = `./Assets/img/${c}.png`;
+
 
 
     if(u == "r" && c == "s"){
-        console.log("WIN");
+        final.innerHTML = "WIN";
         playerpoint1+=1;
+        score.innerHTML = playerpoint1;
+
+
+
     }
     else if( u == "s" && c == "p"){
-        console.log("WIN");
+        final.innerHTML =   "WIN";
         playerpoint1+=1;
+        score.innerHTML = playerpoint1
+
     }
     else if( u == "p" && c == "r"){
-        console.log("WIN");
+        final.innerHTML =   "WIN";
         playerpoint1+=1;
+        score.innerHTML = playerpoint1
+
     }
     else if( u == c){
-        console.log("DRAW");
+        final.innerHTML = "DRAW";
+        final1.innerHTML = "DRAW";
     }
     else{
-        console.log("LOSE");
+        final1.innerHTML = "LOSE"
         playerpoint2+=1;
+        score1.innerHTML = playerpoint2
     }
 
 }
